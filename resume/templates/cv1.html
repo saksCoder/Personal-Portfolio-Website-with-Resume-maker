@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load static %}
+<html>
+  <head>
+    <title>Your Resume</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="C:\Users\mesak\Projects\Portfolio\static\js\html2pdf.bundle.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      address {
+        margin-bottom: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+
+      section {
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+
+      .skills li {
+        display: inline-block;
+        padding: 5px 10px;
+        background-color: #eee;
+        margin-right: 10px;
+      }
+
+      .projects li {
+        margin-bottom: 20px;
+      }
+
+      .projects h3 {
+        font-size: 18px;
+      }
+
+      h1,
+      h2 {
+        color: blue;
+        background-color: #ccc;
+      }
+    </style>
+    <!-- Include locally hosted html2pdf library -->
+  </head>
+  <body id="body">
+    <header>
+      <h1>{{first_name}} {{last_name}}</h1>
+      <address>Tel:{{mobile}}</address>
+      <address>(123) 456-7890</address>
+      <address>{{email}}</address>
+    </header>
+
+    <section class="summary">
+      <h2>Summary</h2>
+      <p>{{about_detail}}</p>
+    </section>
+
+    <section class="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <h3>{{title}}</h3>
+          <p>{{place}}</p>
+          <p>{{start_date}} - {{end_date}}</p>
+          <ul>
+            <p>{{description}}</p>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="education">
+      <h2>Education</h2>
+      <ul>
+        <li>
+          <h3>{{degree}}</h3>
+          <p>{{varsity_name}}</p>
+          <p>{{passing_year}}</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <p>{{skill_detail}}</p>
+      </ul>
+    </section>
+    <section class="projects">
+      <h2>Projects</h2>
+      <p>{{project_detail}}</p>
+    </section>
+    <section class="projects">
+      <h2>Awards</h2>
+      <p>{{award_detail}}</p>
+    </section>
+    <!-- Download button -->
+    <button onclick="downloadAsPDF()">Download as PDF</button>
+
+    <script>
+      function downloadAsPDF() {
+        // Target the element containing the HTML content to be converted to PDF
+        const element = document.body;
+
+        // Use html2pdf library to convert HTML to PDF
+        html2pdf(element).from(element).save();
+      }
+    </script>
+  </body>
+
+  {% comment %} this downloads as html file {% endcomment %} {% comment %}
+  <button type="submit">
+    <a
+      style="text-decoration: none; color: inherit"
+      onclick="this.href='data:text/html;charset=UTF-8,'+encodeURIComponent(document.documentElement.outerHTML)"
+      href="#"
+      download="page.html"
+      >Download</a
+    >
+  </button>
+  {% endcomment %}
+</html>

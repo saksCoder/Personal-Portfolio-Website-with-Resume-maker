@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8" />
+    <title>Sakshi - Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Template Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,600i,700"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/preloader.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/circle.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'css/fm.revealator.jquery.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <!-- CSS Skin File -->
+    <link href="{% static 'css/skins/magenta.css' %}" rel="stylesheet" />
+
+    <!-- Modernizr JS File -->
+    <script src="{% static 'js/modernizr.custom.js' %}"></script>
+    <style>
+      .card-img-top {
+        width: 80%;
+        height: auto;
+        display: block;
+      }
+      .card {
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+        overflow: hidden;
+        border: 1px solid #ffd700;
+      }
+
+      .col1 {
+        position: relative;
+        overflow: hidden;
+      }
+      .col1:hover .t {
+        top: 0;
+      }
+      .col2 {
+        position: relative;
+        overflow: hidden;
+      }
+      .col2:hover .t {
+        top: 0;
+      }
+      .col3 {
+        position: relative;
+        overflow: hidden;
+      }
+      .col3:hover .t {
+        top: 0;
+      }
+      .col4 {
+        position: relative;
+        overflow: hidden;
+      }
+      .col4:hover .t {
+        top: 0;
+      }
+      .col5 {
+        position: relative;
+        overflow: hidden;
+      }
+      .col5:hover .t {
+        top: 0;
+      }
+      .t {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        transition: all 0.4s;
+      }
+      .center-button {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+        top: 50%;
+        left: 50%;
+      }
+    </style>
+  </head>
+
+  <body class="portfolio">
+    <!-- Header Starts -->
+    <header class="header" id="navbar-collapse-toggle">
+      <!-- Fixed Navigation Starts -->
+      <ul
+        class="icon-menu d-none d-lg-block revealator-slideup revealator-once revealator-delay1"
+      >
+        <li class="icon-box">
+          <i class="fa fa-home"></i>
+          <a href="../">
+            <h2>Home</h2>
+          </a>
+        </li>
+        <li class="icon-box">
+          <i class="fa fa-user"></i>
+          <a href="../about">
+            <h2>About</h2>
+          </a>
+        </li>
+        <li class="icon-box">
+          <i class="fa fa-briefcase"></i>
+          <a href="../portfolio">
+            <h2>Portfolio</h2>
+          </a>
+        </li>
+        <li class="icon-box">
+          <i class="fa fa-envelope-open"></i>
+          <a href="../contact">
+            <h2>Contact</h2>
+          </a>
+        </li>
+        <li class="icon-box">
+          <i class="fa fa-comments"></i>
+          <a href="../blog">
+            <h2>Blog</h2>
+          </a>
+        </li>
+        <li class="icon-box active">
+          <i class="fa-fa-file"></i>
+          <a href="../resume">
+            <h2>Resume</h2>
+          </a>
+        </li>
+      </ul>
+      <!-- Fixed Navigation Ends -->
+      <!-- Mobile Menu Starts -->
+      <nav role="navigation" class="d-block d-lg-none">
+        <div id="menuToggle">
+          <input type="checkbox" />
+          <span></span>
+          <span></span>
+          <span></span>
+          <ul class="list-unstyled" id="menu">
+            <li>
+              <a href="../"><i class="fa fa-home"></i><span>Home</span></a>
+            </li>
+            <li>
+              <a href="../about"
+                ><i class="fa fa-user"></i><span>About</span></a
+              >
+            </li>
+            <li>
+              <a href="../portfolio"
+                ><i class="fa fa-folder-open"></i><span>Portfolio</span></a
+              >
+            </li>
+            <li>
+              <a href="../contact"
+                ><i class="fa fa-envelope-open"></i><span>Contact</span></a
+              >
+            </li>
+            <li>
+              <a href="../blog"
+                ><i class="fa fa-comments"></i><span>Blog</span></a
+              >
+            </li>
+            <li class="active">
+              <a href="../resume"
+                ><i class="fa-fa-file"></i><span>Resume</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Mobile Menu Ends -->
+    </header>
+    <!-- Header Ends -->
+    <!-- Page Title Starts -->
+    <section
+      class="title-section text-left text-sm-center revealator-slideup revealator-once revealator-delay1"
+    >
+      <h1>my <span>portfolio</span></h1>
+      <span class="title-bg">templates</span>
+    </section>
+
+    <section>
+      <div class="row row-cols-1 row-cols-md-5 g-4 col pl-5 mb-4">
+        <div class="col1">
+          <div class="card h-100">
+            <img
+              src="../static/img/resume_2.png"
+              class="card-img-top"
+              alt="..."
+              height="250"
+            />
+            <div class="t">
+              <a
+                href="{% url 'resume_2' %}"
+                class="btn btn-primary center-button"
+                >Make CV</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col2">
+          <div class="card h-100">
+            <img
+              src="../static/img/make_cv1.png"
+              class="card-img-top"
+              alt="..."
+              height="250"
+            />
+            <div class="t">
+              {% comment %}
+              <button type="button" class="btn btn-primary center-button">
+                Make CV
+              </button>
+              {% endcomment %}
+              <a
+                href="{% url 'make_cv1' %}"
+                class="btn btn-primary center-button"
+              >
+                Make CV</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col3">
+          <div class="card h-100">
+            <img
+              src="../static/img/cv.jpeg"
+              class="card-img-top"
+              alt="..."
+              height="250"
+            />
+            <div class="t">
+              <a
+                href="{% url 'make_cv2' %}"
+                class="btn btn-primary center-button"
+              >
+                Make CV</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col4">
+          <div class="card h-100">
+            <img
+              src="../static/img/cv.jpeg"
+              class="card-img-top"
+              alt="..."
+              height="250"
+            />
+            <div class="t">
+              <button type="button" class="btn btn-primary center-button">
+                Make CV
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col5">
+          <div class="card h-100">
+            <img
+              src="../static/img/cv.jpeg"
+              class="card-img-top"
+              alt="..."
+              height="250"
+            />
+            <div class="t">
+              <button type="button" class="btn btn-primary center-button">
+                Make CV
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content Ends -->
+
+    <!-- Template JS Files -->
+    <script src="{% static 'js/jquery-3.5.0.min.js' %}"></script>
+    <script src="{% static 'js/preloader.min.js' %}"></script>
+    <script src="{% static 'js/fm.revealator.jquery.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/classie.js' %}"></script>
+    <script src="{% static 'js/cbpGridGallery.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverdir.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html>
